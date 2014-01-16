@@ -28,7 +28,7 @@ angular.module('fastBind.bindNotifier', []).
             name = attributes.fastBindNotifierName || DEFAULT_EVENT_NAME,
             mode = attributes.fastBindNotifierMode || DEFAULT_MODE;
 
-        return function link(scope, element) {console.log('a');
+        return function link(scope, element) {
           var handler = function handler(newValue, oldValue, scope) {
             scope.$broadcast(name, newValue, oldValue);
           };

@@ -1,12 +1,46 @@
-<div data-fast-bind-notifier="demoCtrl.page">
+<div>
+  <h2>fast-bind-once vs ng-bind</h2>
   <p>
     <label for="cookieJarName">Cookie jar name:</label>
-    <input data-ng-model="demoCtrl.cookieJarName"></input>
+    <input data-ng-model="demoCtrl.cookieJarName" id="cookieJarName"></input>
   </p>
 
-  <p>Cookie jar name (ng-bind): <span data-ng-bind="demoCtrl.cookieJarName"></span></p>
-  <p>Cookie jar name (fast-bind-once): <span data-fast-bind-once="demoCtrl.cookieJarName"></span></p>
-  <p>Cookie jar name (fast-bind-on-notify): <span data-fast-bind-on-notify="demoCtrl.cookieJarName"></span></p>
+  <p><label>Cookie jar name (ng-bind):</label> <span data-ng-bind="demoCtrl.cookieJarName"></span></p>
+  <p><label>Cookie jar name (fast-bind-once):</label> <span data-fast-bind-once="demoCtrl.cookieJarName"></span></p>
+  <!--<p>Cookie jar name (fast-bind-on-notify): <span data-fast-bind-on-notify="demoCtrl.cookieJarName"></span></p>-->
+
+  <h2>fast-bind-on-notify vs fast-bind-once vs ng-bind</h2>
 
   <button data-ng-click="demoCtrl.switchPage()">Go to other page</button> (Current page: {{demoCtrl.page}})
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Name (fast-bind-on-notify)</th>
+        <th>Yuminess (fast-bind-on-notify)</th>
+        <th>Yuminess (fast-bind-once)</th>
+        <th>Yuminess (ng-bind)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr data-ng-repeat="cookie in demoCtrl.cookies[demoCtrl.page] track by $index"
+          data-fast-bind-notifier="demoCtrl.page">
+        <td data-fast-bind-on-notify="cookie.name"></td>
+        <td data-fast-bind-on-notify="cookie.yumminess"></td>
+        <td data-fast-bind-once="cookie.yumminess"></td>
+        <td data-ng-bind="cookie.yumminess"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <label for="chocolateChipYuminess">Chocolate chip yumminess:</label>
+    <input data-ng-model="demoCtrl.cookies[0][0].yumminess" id="chocolateChipYumminess"></input>
+  </p>
+
+  <h2>Number of dirty checks / binding</h2>
+  <p><label>ng-bind:</label> <span id="ngBindCount"></span></p>
+  <p><label>fast-bind-once:</label> {{demoCtrl.bindOnceCount}}</p>
+  <p><label>fast-bind-on-notify:</label> {{demoCtrl.bindOnNotifyCount}}</p>
 </div>

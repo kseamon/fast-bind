@@ -1,5 +1,9 @@
 /* app css stylesheet */
 
+body {
+  font-family: helvetica,arial,sans-serif;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +31,39 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+label {
+  font-size: 90%;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+th {
+  background-color: #eee;
+}
+
+td:hover {
+  background-color: #ffb;
+}
+
+[data-ng-bind] {
+  color: #4a5;
+}
+
+[data-fast-bind-once] {
+  color: #a56;
+}
+
+[data-fast-bind-on-notify] {
+  color: #65a;
 }
