@@ -7,7 +7,7 @@
  */
 
 
-angular.module('fastBind.bind-on-notify', []).
+angular.module('fastBind.bindOnNotify', []).
   directive('fastBindOnNotify', ['$parse', function($parse) {
     var DEFAULT_EVENT_NAME = 'fast-bind-notify';
 
@@ -17,8 +17,14 @@ angular.module('fastBind.bind-on-notify', []).
             name = attributes.fastBindOnNotifyName || DEFAULT_EVENT_NAME;
 
         return function link(scope, element) {
-          scope.$on(name, function(), {
-            element.text(expr(scope));
+          var lastValue;
+          scope.$on(name, function() {
+            var value = expr(scope);
+
+            if (value !== lastValue) {
+              element.text(value);
+            }
+            lastValue = value;
           });
         };
       }

@@ -5,7 +5,9 @@
 angular.module('fastBind', [
   'ngRoute',
   'fastBind.demoController',
-  'fastBind.bindOnce'
+  'fastBind.bindOnce',
+  'fastBind.bindNotifier',
+  'fastBind.bindOnNotify'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'tmpl/main.html', controller: 'DemoController as demoCtrl'});

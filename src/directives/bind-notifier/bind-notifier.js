@@ -10,12 +10,12 @@
  */
 
 
-angular.module('fastBind.bind-notifier', []).
+angular.module('fastBind.bindNotifier', []).
   directive('fastBindNotifier', ['$parse', function($parse) {
     var Mode = {
       SHALLOW: 'shallow',
       DEEP: 'deep',
-      COLLECtION: 'collection';
+      COLLECtION: 'collection'
     };
 
     var DEFAULT_EVENT_NAME = 'fast-bind-notify',
@@ -28,7 +28,7 @@ angular.module('fastBind.bind-notifier', []).
             name = attributes.fastBindNotifierName || DEFAULT_EVENT_NAME,
             mode = attributes.fastBindNotifierMode || DEFAULT_MODE;
 
-        return function link(scope, element) {
+        return function link(scope, element) {console.log('a');
           var handler = function handler(newValue, oldValue, scope) {
             scope.$broadcast(name, newValue, oldValue);
           };

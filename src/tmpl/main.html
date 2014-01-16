@@ -1,9 +1,12 @@
-<div>
+<div data-fast-bind-notifier="demoCtrl.page">
   <p>
     <label for="cookieJarName">Cookie jar name:</label>
     <input data-ng-model="demoCtrl.cookieJarName"></input>
   </p>
 
   <p>Cookie jar name (ng-bind): <span data-ng-bind="demoCtrl.cookieJarName"></span></p>
-  <p>Cookie jar name (fast-bind-once): <span data-fast-bind-once="demoCtrl.cookieJarName"></span></p>  
+  <p>Cookie jar name (fast-bind-once): <span data-fast-bind-once="demoCtrl.cookieJarName"></span></p>
+  <p>Cookie jar name (fast-bind-on-notify): <span data-fast-bind-on-notify="demoCtrl.cookieJarName"></span></p>
+
+  <button data-ng-click="demoCtrl.switchPage()">Go to other page</button> (Current page: {{demoCtrl.page}})
 </div>
