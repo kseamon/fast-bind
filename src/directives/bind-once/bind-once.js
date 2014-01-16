@@ -2,7 +2,7 @@
 
 /*
  * Binds the to the expression once at startup,
- * Usage: <span fast-bind-once="myExpression"
+ * Usage: <span fast-bind-once="myExpression"></span>
  */
 
 
