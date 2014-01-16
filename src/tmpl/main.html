@@ -23,9 +23,8 @@
       </tr>
     </thead>
 
-    <tbody>
-      <tr data-ng-repeat="cookie in demoCtrl.cookies[demoCtrl.page] track by $index"
-          data-fast-bind-notifier="demoCtrl.page">
+    <tbody data-fast-bind-notifier="demoCtrl.page">
+      <tr data-ng-repeat="cookie in demoCtrl.cookies[demoCtrl.page] track by $index">
         <td data-fast-bind-on-notify="cookie.name"></td>
         <td data-fast-bind-on-notify="cookie.yumminess"></td>
         <td data-fast-bind-once="cookie.yumminess"></td>
