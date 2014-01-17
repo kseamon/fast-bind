@@ -12,7 +12,7 @@ angular.module('fastBind.demoController', []).
         {name: 'Sugar', yumminess: 'Good with sprinkles'}
       ],
       [
-        {name: 'Oatmeal raising', yumminess: 'Awful'},
+        {name: 'Oatmeal raisin', yumminess: 'Awful'},
         {name: 'Peanut butter', yumminess: 'Nice'},
         {name: 'Snickerdoodle', yumminess: 'Pretty good'}
       ]
