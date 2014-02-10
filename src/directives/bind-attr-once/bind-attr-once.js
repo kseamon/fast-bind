@@ -10,13 +10,13 @@ angular.module('fastBind.bindAttrOnce', []).
   directive('fastBindAttrOnce', ['$parse', function($parse) {
     return {
       compile: function compile(element, attributes) {
-        var expr = $parse(attributes.fastBindOnce);
+        var expr = $parse(attributes.fastBindAttrOnce);
 
         return function link(scope, element) {
           var values = expr(scope);
 
           angular.forEach(values, function(value, key) {
-            attrs.$set(key, value);
+            attributes.$set(key, value);
           });
         };
       }
