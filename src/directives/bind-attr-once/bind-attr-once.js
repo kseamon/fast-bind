@@ -16,7 +16,7 @@ angular.module('fastBind.bindAttrOnce', []).
           var values = expr(scope);
 
           angular.forEach(values, function(value, key) {
-            attrs.$set(key, value);
+            attributes.$set(key, value);
           });
         };
       }
