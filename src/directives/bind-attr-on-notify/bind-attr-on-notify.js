@@ -14,7 +14,7 @@ angular.module('fastBind.bindAttrOnNotify', []).
 
     return {
       compile: function compile(element, attributes) {
-        var expr = $parse(attributes.widgetsFastBindAttrsOnNotify),
+        var expr = $parse(attributes.fastBindAttrOnNotify),
             name = attributes.fastBindOnNotifyName || DEFAULT_EVENT_NAME;
 
         return function link(scope, element, attrs) {
