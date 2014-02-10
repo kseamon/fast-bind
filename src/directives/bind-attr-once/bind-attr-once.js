@@ -12,7 +12,7 @@ angular.module('fastBind.bindAttrOnce', []).
       compile: function compile(element, attributes) {
         var expr = $parse(attributes.fastBindAttrOnce);
 
-        return function link(scope, element) {
+        return function link(scope, element, attrs) {
           var values = expr(scope);
 
           angular.forEach(values, function(value, key) {
