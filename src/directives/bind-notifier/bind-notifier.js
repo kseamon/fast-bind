@@ -15,7 +15,7 @@ angular.module('fastBind.bindNotifier', []).
     var Mode = {
       SHALLOW: 'shallow',
       DEEP: 'deep',
-      COLLECtION: 'collection'
+      COLLECTION: 'collection'
     };
 
     var DEFAULT_EVENT_NAME = 'fast-bind-notify',
